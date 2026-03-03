@@ -27,9 +27,9 @@ let package = Package(
                 ".github"
             ],
             sources: ["Sources/pop"],
-            publicHeadersPath: "Sources/pop",
+            publicHeadersPath: "include",
             cxxSettings: [
-                .headerSearchPath("Sources")
+                .headerSearchPath("include")
             ]
         )
     ],
