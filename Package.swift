@@ -19,17 +19,24 @@ let package = Package(
             name: "pop",
             path: ".",
             exclude: [
-                "pop",
                 "Examples",
                 "Tests",
                 "README.md",
                 "LICENSE",
-                ".github"
+                ".github",
+                "Sources",
+                "include",
+                "pop/pop-ios-Info.plist",
+                "pop/pop-osx-Info.plist",
+                "pop/pop-tvos-Info.plist"
             ],
-            sources: ["Sources/pop"],
-            publicHeadersPath: "include",
+            sources: ["pop"],
+            publicHeadersPath: "pop",
+            cSettings: [
+                .headerSearchPath(".")
+            ],
             cxxSettings: [
-                .headerSearchPath("include")
+                .headerSearchPath(".")
             ]
         )
     ],
