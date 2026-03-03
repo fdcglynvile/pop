@@ -17,14 +17,19 @@ let package = Package(
     targets: [
         .target(
             name: "pop",
+            path: ".",
             exclude: [
-                "pop-ios-Info.plist",
-                "pop-osx-Info.plist",
-                "pop-tvos-Info.plist"
+                "pop",
+                "Examples",
+                "Tests",
+                "README.md",
+                "LICENSE",
+                ".github"
             ],
-            publicHeadersPath: ".",
+            sources: ["Sources/pop"],
+            publicHeadersPath: "Sources/pop",
             cxxSettings: [
-                .headerSearchPath(".")
+                .headerSearchPath("Sources")
             ]
         )
     ],
