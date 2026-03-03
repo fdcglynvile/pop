@@ -17,10 +17,14 @@ let package = Package(
     targets: [
         .target(
             name: "pop",
-            path: "pop",
+            exclude: [
+                "pop-ios-Info.plist",
+                "pop-osx-Info.plist",
+                "pop-tvos-Info.plist"
+            ],
             publicHeadersPath: ".",
             cxxSettings: [
-                .headerSearchPath("."),
+                .headerSearchPath(".")
             ]
         )
     ],
